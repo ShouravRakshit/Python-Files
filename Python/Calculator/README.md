@@ -1,2 +1,2 @@
-# Day-10
+# Calculator
  Working with function
