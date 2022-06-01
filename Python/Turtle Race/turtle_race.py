@@ -23,12 +23,13 @@ for ninja in range(6):
 condition = True
 while condition:
     for ninja in range(len(turtels)):
-        turtels[ninja].forward(random.randint(1, 10))
         # Using the forward method so that all the turtle moves forward.
+        turtels[ninja].forward(random.randint(1, 10))
+        # The first turtle that reaches the end first, will win the race.
         if turtels[ninja].xcor() > 230:
-            # The first turtle that reaches the end first will win the race.
+            # This will check whether your turtle won the race.
             if user_text == colors[ninja]:
-                # This will check which turtle won the race.
+
                 print(f"You won {colors[ninja]}")
 
             else:
