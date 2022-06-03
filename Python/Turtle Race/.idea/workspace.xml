@@ -26,14 +26,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Python/Python/Turtle Race&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ToolWindowRun.ShowToolbar": "false",
+    "last_opened_file_path": "E:/Python/Python/SnakeGame"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Python.turtle_race">
     <configuration name="Sketch (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Turtle Race" />
