@@ -30,9 +30,9 @@ class Snake:
     # Moving the Snake body.
     def move(self):
         for segment in range(len(self.snake_segments) - 1, 0, -1):
-            # Changing the position of the snake body other than the first one. Other body parts will change its position.
-            # For example, the second square of the body part will go to the position of the first square of the body
-            # part and third will go to the position of the second one and so forth.
+            # Changing the position of the snake body other than the first one. Other body parts will change its
+            # position. For example, the second square of the body part will go to the position of the first square of
+            # the body part and third will go to the position of the second one and so forth.
             new_x = self.snake_segments[segment - 1].xcor()
             new_y = self.snake_segments[segment - 1].ycor()
             self.snake_segments[segment].goto(new_x, new_y)
