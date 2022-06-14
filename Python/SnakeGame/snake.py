@@ -27,6 +27,15 @@ class Snake:
             # Changing only the x coordinate by 20 because every square is by default 20px.
             self.x = self.x + 20
 
+    # Extend the body of the snake when it eats food.
+    def extend_body(self):
+        snake = Turtle("square")
+        snake.speed(0)
+        snake.penup()
+        self.snake_segments.append(snake)
+        snake.color("white")
+        snake.goto(self.snake_segments[-1].pos())
+
     # Moving the Snake body.
     def move(self):
         for segment in range(len(self.snake_segments) - 1, 0, -1):

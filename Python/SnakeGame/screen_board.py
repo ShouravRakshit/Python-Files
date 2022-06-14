@@ -22,7 +22,7 @@ class Score:
         self.title.write(f"Score : {self.score}", font=FONT)
         self.score += 1
 
-    # This text will show up if the game is over.
+    # This method will run if the game is over.
     def game_over(self):
         self.title.goto(0, 0)
         self.title.write(f"GAME OVER", font=FONT, align="center")

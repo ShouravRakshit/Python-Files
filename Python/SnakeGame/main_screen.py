@@ -31,11 +31,14 @@ while condition:
     if snake.snake_head.distance(food.meal) < 18:
         food.new_food_location()
         score_board.increase_score()
+        snake.extend_body()
 
+    # When it hits the boundary of the game.
     if snake.snake_head.xcor() >= 290 or snake.snake_head.xcor() <= -290 or snake.snake_head.ycor() >= 250 or \
             snake.snake_head.ycor() <= -290:
         score_board.game_over()
-        break
+        condition = False
+
 
 screen.exitonclick()
 
