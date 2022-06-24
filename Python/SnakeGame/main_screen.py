@@ -39,6 +39,5 @@ while condition:
         score_board.game_over()
         condition = False
 
-
 screen.exitonclick()
 

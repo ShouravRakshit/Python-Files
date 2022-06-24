@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-FONT = ("Arial", 25, "normal")
+FONT = ("Arial", 15, "normal")
 
 
 # This class is showing the score of the player.
@@ -11,6 +11,9 @@ class Score:
         self.title.penup()
         self.title.hideturtle()
         self.score = 0
+        with open("data.txt", mode="r") as file:
+            self.high_score = int(file.read())
+
         self.title.speed(0)
         self.title.color("white")
         self.title.goto(-70, 250)
@@ -19,7 +22,11 @@ class Score:
     # Score increase method.
     def increase_score(self):
         self.title.clear()
-        self.title.write(f"Score : {self.score}", font=FONT)
+        if self.score > self.high_score:
+            self.high_score = self.score
+            with open("data.txt", mode="w") as file:
+                file.write(f"{self.high_score}")
+        self.title.write(f"Score : {self.score} High Score: {self.high_score}", font=FONT)
         self.score += 1
 
     # This method will run if the game is over.
