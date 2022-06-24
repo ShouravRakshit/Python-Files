@@ -31,13 +31,13 @@ while game_on:
     screen.update()
     if difficult_level < .01:
         if score.player_one_score > score.player_two_score:
-            print(f"The winner is player one with {score.player_one_score} points")
+
             game_on = False
         elif score.player_two_score > score.player_one_score:
-            print(f"The winner is player two with {score.player_two_score} points")
+
             game_on = False
         else:
-            print("The game is draw")
+            
             game_on = False
     time.sleep(difficult_level)
 
