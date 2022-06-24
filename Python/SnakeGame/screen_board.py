@@ -11,6 +11,7 @@ class Score:
         self.title.penup()
         self.title.hideturtle()
         self.score = 0
+        # Opened the data file for reading the high score.
         with open("data.txt", mode="r") as file:
             self.high_score = int(file.read())
 
@@ -22,8 +23,10 @@ class Score:
     # Score increase method.
     def increase_score(self):
         self.title.clear()
+        # Checking whether the new score is greater than the high score.
         if self.score > self.high_score:
             self.high_score = self.score
+            # If the new score greater than the high score, than changing the data file's high score.
             with open("data.txt", mode="w") as file:
                 file.write(f"{self.high_score}")
         self.title.write(f"Score : {self.score} High Score: {self.high_score}", font=FONT)
