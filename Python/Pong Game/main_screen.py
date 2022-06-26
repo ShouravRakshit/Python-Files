@@ -37,7 +37,7 @@ while game_on:
 
             game_on = False
         else:
-            
+
             game_on = False
     time.sleep(difficult_level)
 
