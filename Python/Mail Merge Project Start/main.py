@@ -13,11 +13,9 @@ for names in range(len(contents)):
         list_of_names.append(contents[names])
 
 
-print(list_of_names)
 # Read the starting_letter.txt file and make a list.
 with open("E:/Python/Python/Mail Merge Project Start/Input/Letters/starting_letter.txt", mode="r") as file:
     contents = file.readlines()
-print(len(contents))
 
 
 for text in range(len(list_of_names)):
@@ -30,11 +28,3 @@ for text in range(len(list_of_names)):
             else:
                 file.write(contents[letter])
 
-
-
-
-
-
-# file1.write(toFile)
-#
-# file1.close()
