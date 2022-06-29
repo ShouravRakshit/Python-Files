@@ -16,7 +16,6 @@ x_coordinate = data["x"].to_list()
 y_coordinate = data["y"].to_list()
 correct_answer = 0
 quiz_on = True
-
 while quiz_on:
     user_input = textinput(f"{correct_answer}/ 50 States Correct", "Guess a another state")
 
@@ -29,6 +28,3 @@ while quiz_on:
         # To exit the program type exit.
         elif user_input == "exit":
             quiz_on = False
-            screen.bye()
-
-screen.mainloop()
