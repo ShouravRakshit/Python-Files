@@ -11,6 +11,15 @@ WORK_MIN = 20
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
+checker = ""
+
+
+# This method resets everything.
+def reset():
+    window.after_cancel(timer)
+    canvas.itemconfig(time_text, text="00:00")
+    label_timer.config(text="Timer", fg=GREEN)
+    checkbox.config(text="")
 
 
 def second_to_minute():
@@ -42,7 +51,7 @@ def count_down(time_remain):
     # Formatting the time to 00:00.
     minutes = math.floor(time_remain / 60)
     seconds = time_remain % 60
-
+    global checker
     if seconds < 10:
         seconds = f"0{seconds}"
 
@@ -50,10 +59,15 @@ def count_down(time_remain):
         minutes = f"0{minutes}"
 
     if time_remain > 0:
+        global timer
         canvas.itemconfig(time_text, text=f"{minutes}:{seconds}")
-        window.after(5, count_down, time_remain - 1)
+        timer = window.after(50, count_down, time_remain - 1)
     else:
         second_to_minute()
+        # After every two rep one tik mark is added.
+        if reps % 2 == 0:
+            checker = checker + "✓"
+            checkbox.config(text=checker)
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -73,10 +87,10 @@ start_button = Button()
 start_button.config(text="Start", highlightthickness=0, command=second_to_minute)
 start_button.place(x=120, y=400)
 reset_button = Button()
-reset_button.config(text="Reset", highlightthickness=0)
+reset_button.config(text="Reset", highlightthickness=0, command=reset)
 reset_button.place(x=330, y=400)
 checkbox = Label()
-checkbox.config(highlightthickness=0, text="✓", bg=YELLOW, fg=GREEN)
+checkbox.config(highlightthickness=0, text="", bg=YELLOW, fg=GREEN)
 checkbox.place(x=240, y=420)
 canvas.pack()
 window.mainloop()
