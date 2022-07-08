@@ -1,16 +1,32 @@
-# This is a sample Python script.
+from tkinter import Tk, Label, Button, Entry
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+window = Tk()
+window.title("My Game")
+window.minsize(width=500, height=600)
+
+label = Label(text="I am a label", font=("Arial", 20, "bold"))
+label.grid(column=0, row=0)
+label["text"] = "I am Super"
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def button_click():
+    new_message = (user_input.get())
+    if new_message == "on":
+        label.config(text="On")
+    else:
+        label.config(text="Off")
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def new_button_click():
+    print("Shinsuke Nakamura")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+button = Button(text="Click here", command=button_click)
+button.grid(column=1, row=1)
+
+new_button = Button(text="New Button", command=new_button_click)
+new_button.grid(column=2, row=0)
+user_input = Entry(width=15)
+
+user_input.grid(column=3, row=2)
+window.mainloop()
