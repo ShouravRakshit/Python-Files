@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import random
 import string
+import pyperclip
 
 
 # This function generates random password for the users if they click the generate password button.
@@ -18,6 +19,8 @@ def generate_password():
         strong_password = strong_password + str(strong_password_list[key])
 
     password_entry.insert(0, strong_password)
+    # Automatically copies the password in the clipboard.
+    pyperclip.copy(strong_password)
 
 
 def add_info():
