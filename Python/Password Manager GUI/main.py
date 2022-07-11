@@ -3,6 +3,7 @@ from tkinter import messagebox
 import random
 import string
 import pyperclip
+import json
 
 
 # This function generates random password for the users if they click the generate password button.
@@ -27,14 +28,27 @@ def add_info():
     website = website_entry.get()
     email = email_entry.get()
     password = password_entry.get()
+    new_data = {
+        website: {
+            "email": email,
+            "password": password
+        }
+    }
     if len(website) < 2 or len(password) < 2:
         messagebox.showinfo(title="Oops", message="Please don't leave any fields empty!")
     else:
         details = messagebox.askokcancel(title=website,
                                          message=f"These are details you have entered\n Email: {email}\n Password: {password}")
         if details:
-            with open("data.txt", mode="a") as f:
-                store_content = f.write(f"{website} | {email} | {password}\n")
+            with open("data.json", mode="r") as load_file:
+                # Loading the file.
+                data = json.load(load_file)
+                # Updating the file.
+                data.update(new_data)
+
+            with open("data.json", mode="w") as data_file:
+                # Writing the file.
+                json.dump(data, data_file, indent=4)
                 website_entry.delete(0, END)
                 password_entry.delete(0, END)
 
