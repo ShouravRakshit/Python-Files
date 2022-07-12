@@ -1,18 +1,22 @@
 {
-    "qweer": {
+    "was": {
         "email": "example@email.com",
-        "password": "Ei[692"
+        "password": "Sh@!<'6"
+    },
+    "ivan": {
+        "email": "example@email.com",
+        "password": "OU;%&902"
+    },
+    "akain": {
+        "email": "example@email.com",
+        "password": "D]-603"
     },
     "Amazon": {
-        "email": "example@email.com",
-        "password": "e]).25n}!|321"
+        "email": "Amazon@gmail.com",
+        "password": "w;#|9352"
     },
-    "ebay": {
+    "bsa": {
         "email": "example@email.com",
-        "password": "ER{52"
-    },
-    "wasif": {
-        "email": "wasif@email.com",
-        "password": "Gbq)916Fq\"|(~3"
+        "password": "Yhb)3"
     }
 }
