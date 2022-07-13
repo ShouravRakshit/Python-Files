@@ -10,16 +10,15 @@ class Password:
                         '}',
                         '.',
                         '_', '=', ']', '!', '>', ';', '?', '#', '$', ')', '/']
-        self.numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        self.numbers = str([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
     # This method generates random password for the users if they click the generate password button.
     def random_password(self):
-        strong_password_list = random.sample(self.alphabet, random.randint(1, 4)) + random.sample(self.symbols,
+        strong_password_list = random.sample(self.alphabet, random.randint(1, 2)) + random.sample(self.symbols,
                                                                                                   random.randint(1,
-                                                                                                                 4)) + \
-                               random.sample(self.numbers, random.randint(1, 4))
-        strong_password = ""
-        for key in range(len(strong_password_list)):
-            strong_password = strong_password + str(strong_password_list[key])
+                                                                                                                 2)) + \
+                               (random.sample(self.numbers, random.randint(1, 2)))
+
+        strong_password = "".join(strong_password_list)
 
         return strong_password

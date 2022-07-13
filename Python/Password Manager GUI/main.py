@@ -9,7 +9,9 @@ new_password = Password()
 
 def generate_password():
     strong_password = new_password.random_password()
+    password_entry.delete(0, END)
     password_entry.insert(0, strong_password)
+
     # Automatically copies the password in the clipboard.
     pyperclip.copy(strong_password)
 
@@ -118,6 +120,7 @@ button.place(x=235, y=260)
 add_button = Button(width=33, text="Add", command=add_info)
 add_button.place(x=100, y=290)
 
+# A Search button for searching a website's email and password.
 search_button = Button(text="Search", command=search_info)
 search_button.place(x=245, y=203)
 search_button.config(width=13)
