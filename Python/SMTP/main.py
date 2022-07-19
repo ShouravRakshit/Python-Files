@@ -5,7 +5,7 @@ import smtplib
 import datetime as dt
 from email.message import EmailMessage
 
-
+# This function sends the message.
 def email_alert(subject, body, to):
     msg = EmailMessage()
     msg.set_content(body)
@@ -20,7 +20,7 @@ def email_alert(subject, body, to):
     server.send_message(msg)
     server.quit()
 
-
+# Using the pandas library extract the name, month and date information.
 df = pandas.read_csv('birthdays.csv')
 name = (df["name"][0])
 month = df["month"][0]
@@ -32,7 +32,7 @@ with open(f"letter_templates/letter_{random_file}.txt", mode="r") as file:
 with open(f"letter_templates/letter_{random_file}.txt", mode="w") as f:
     for letters in words_list:
         f.write(letters.replace("[NAME]", name))
-
+# CHecking whether the date and the month matches with the csv file's one.
 if int(dt.datetime.now().strftime("%d")) == date and int(dt.datetime.now().strftime("%m")) == month:
     with open(f"letter_templates/letter_{random_file}.txt", mode="r") as f:
         content = f.readlines()
