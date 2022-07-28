@@ -25,11 +25,6 @@ def search_country():
         response.raise_for_status()
 
         data = response.json()
-        # timestamp = data["dt"]
-        # print(timestamp)
-        # current_time_data = datetime.fromtimestamp(timestamp)
-        # print(current_time_data)
-        # Taking the data from the api.
         temp_data = data["main"]["temp"] - 273
         wind_data = ((data["wind"]["speed"]) * 3600) / 1000
         humidity_data = data["main"]["humidity"]
@@ -46,7 +41,7 @@ def search_country():
         temp_label.config(text=f"{round(temp_data, 2)} °")
         description_label.config(text=f"{description_data}   |")
         feels_like_label.config(text=f"FEELS LIKE {round(feels_like_data, 2)} °")
-        # current_time_label.config(text=f"Current Time \n{current_time_data}", font=FONT)
+
     # If there is a HTTPError, then it will show no city name found name on the entry box.
     except requests.HTTPError:
         search_bar_entry.delete(0, END)
