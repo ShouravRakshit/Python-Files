@@ -52,7 +52,7 @@ def getting_flight():
     response = requests.get(url=tequila_endpoint, params=parameters, headers=header)
     response.raise_for_status()
     data = (response.json())
-
+    print(data)
     with open('plane.txt', 'w') as json_file:
         json.dump(data, json_file, indent=4)
 
@@ -63,7 +63,7 @@ def getting_flight():
     ticket_prices = []
     for low_price in range(item):
         ticket_prices.append(json_file[low_price]["price"])
-    # print(ticket_prices)
+    print(ticket_prices)
     lowest_price = min(ticket_prices)
     blue_bar.itemconfig(price_text, text=lowest_price)
 

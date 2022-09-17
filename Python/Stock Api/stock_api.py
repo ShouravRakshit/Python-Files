@@ -1,8 +1,9 @@
 import datetime
 import smtplib
-import os
 from data import Data
 from email.message import EmailMessage
+
+import os
 
 information = Data()
 stock_data = information.get_stock_data()
@@ -26,7 +27,7 @@ def email_alert(subject, body, to):
 
 
 today = datetime.date.today()
-day = 1
+day = 10
 
 while True:
     # If this section of the code fails because of KeyError, then it will just go back one more previous day to check
@@ -40,10 +41,11 @@ while True:
     except KeyError:
         day += 1
 
-# print(f"Today's stock price is : {today_stock_price}")
-# print(f"Yesterday's stock price was : {day_before_yesterday_stock_price}")
-# If the today's stock price increased 5 percent then yesterday's, then it will send an email to notify me.
+print(f"Today's stock price is : {today_stock_price}")
+print(f"Yesterday's stock price was : {day_before_yesterday_stock_price}")
+# If the today's stock price increased 5 percent then yesterday's, then it will notify me through email.
 if (day_before_yesterday_stock_price * .05) + day_before_yesterday_stock_price <= today_stock_price:
+    print("Yosh")
     news_title = news_data["articles"][0]["title"]
     news_description = news_data["articles"][0]["description"]
     email_alert(news_title, news_description, "shouravivan1000@gmil.com")

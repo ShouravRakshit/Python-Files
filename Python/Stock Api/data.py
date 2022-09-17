@@ -1,5 +1,6 @@
 import requests
 import os
+from tkinter import *
 
 STOCK = "GOOGL"
 
@@ -17,7 +18,6 @@ class Data:
             "category": "business",
             "q": STOCK,
             "apiKey": self.news_password
-
         }
 
         news_url = "https://newsapi.org/v2/top-headlines"
@@ -35,3 +35,8 @@ class Data:
         stock_url = 'https://www.alphavantage.co/query'
         r = requests.get(stock_url, params=stock_parameters)
         return r.json()
+
+
+object = Data()
+data = object.get_stock_data()["Time Series (Daily)"]["2022-09-15"]["4. close"]
+print(data)
