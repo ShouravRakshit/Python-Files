@@ -56,7 +56,7 @@ def get_data():
     stock = stock_data(stock_company, google_password)
 
     today = datetime.date.today()
-    day = 10
+    day = 1
 
     while True:
         # If this section of the code fails because of KeyError,
