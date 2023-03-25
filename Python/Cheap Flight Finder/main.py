@@ -52,7 +52,7 @@ def getting_flight():
     response = requests.get(url=tequila_endpoint, params=parameters, headers=header)
     response.raise_for_status()
     data = (response.json())
-    print(data)
+    # print(data)
     with open('plane.txt', 'w') as json_file:
         json.dump(data, json_file, indent=4)
 
@@ -75,7 +75,7 @@ def getting_flight():
     new_format = "%Y-%m-%d"
     d2.strftime(new_format)
     d1.strftime(new_format)
-
+    print(d1, d2)
     blue_bar.itemconfig(depart_text, text=d1)
     blue_bar.itemconfig(arrival_text, text=d2)
     blue_bar.itemconfig(airline_text, text=json_file[index]["airlines"][0])
