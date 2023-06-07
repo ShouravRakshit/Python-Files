@@ -10,8 +10,3 @@ basket.remove("Blueberries")
 basket.append("Kiwi")
 # 4. Add "Apples" at the beginning of the list
 
-# 5. Count how many apples in the basket
-
-# 6. empty the basket
-
-print(basket)
