@@ -1,12 +1,10 @@
-# using this list,
-basket = ["Banana", "Apples", "Oranges", "Blueberries"];
-# 1. Remove the Banana from the list
-basket.remove("Banana")
+def highest_even(li):
+    result = li[0]
+    for items in li:
+        if items > result and items % 2 == 0:
+            result = items
 
-# 2. Remove "Blueberries" from the list.
-basket.remove("Blueberries")
+    return result
 
-# 3. Put "Kiwi" at the end of the list.
-basket.append("Kiwi")
-# 4. Add "Apples" at the beginning of the list
 
+print(highest_even([10, 20, 3, 4, 8, 11]))
