@@ -1,10 +1,12 @@
-def highest_even(li):
-    result = li[0]
-    for items in li:
-        if items > result and items % 2 == 0:
-            result = items
+class PlayerCharacter:
 
-    return result
+    def __int__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def run(self):
+        print("run")
 
 
-print(highest_even([10, 20, 3, 4, 8, 11]))
+player1 = PlayerCharacter("Ivan", 20)
+print(player1.age, "\t", player1.name)
