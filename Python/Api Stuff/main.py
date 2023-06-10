@@ -1,8 +1,8 @@
 class PlayerCharacter:
-
-    def __int__(self, name, age):
-        self.name = name
-        self.age = age
+    # By instantiating we are creating a object
+    def __init__(self, name, age):
+        self.name = "i"
+        self.age = 17
 
     def run(self):
         print("run")
