@@ -1,12 +1,12 @@
-class PlayerCharacter:
-    # By instantiating we are creating a object
-    def __init__(self, name, age):
-        self.name = "i"
-        self.age = 17
+from googletrans import Translator
 
-    def run(self):
-        print("run")
+f = open("test1.txt", "r")
+text = (f.readlines())
+new_text = ""
+for letters in text:
+    new_text = new_text + letters
 
+translator = Translator()
+print(translator.translate(new_text, dest='ja'))
 
-player1 = PlayerCharacter("Ivan", 20)
-print(player1.age, "\t", player1.name)
+f.close()
