@@ -8,5 +8,6 @@ for letters in text:
 
 translator = Translator()
 print(translator.translate(new_text, dest='ja'))
+print("This is a comment")
 
 f.close()
