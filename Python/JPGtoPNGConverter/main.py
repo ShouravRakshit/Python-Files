@@ -17,10 +17,8 @@ if len(sys.argv) > 1:
 
     # Create the folder path by joining the current directory with the folder name
     folder_path = os.path.join(current_directory, folder_name)
-    try:
+    if not os.path.exists(folder_path):
         os.mkdir(folder_path)
-    except FileExistsError:
-        pass
 
     input_folder_path = f"{arguments[0]}"
     output_folder_path = f"{arguments[1]}"
@@ -45,6 +43,3 @@ if len(sys.argv) > 1:
 
 else:
     print("No command-line arguments provided.")
-
-
-
