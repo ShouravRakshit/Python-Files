@@ -12,20 +12,15 @@ if len(sys.argv) > 1:
     current_directory = os.path.dirname(os.path.abspath(__file__))
 
     # Specify the name of the new folder
-    try:
-        folder_name = f"{arguments[0]}"
+
+    folder_name = f"{arguments[1]}"
 
     # Create the folder path by joining the current directory with the folder name
-        folder_path = os.path.join(current_directory, folder_name)
-        print("Bal")
+    folder_path = os.path.join(current_directory, folder_name)
+    try:
         os.mkdir(folder_path)
-        print("meh")
     except FileExistsError:
-        print("Folder already exits.")
-
-    # Specify the path and filename of the input JPG image
-    # input_folder_path = "./Pokedex"
-    # output_folder_path = "./new_pics"
+        pass
 
     input_folder_path = f"{arguments[0]}"
     output_folder_path = f"{arguments[1]}"
@@ -34,17 +29,12 @@ if len(sys.argv) > 1:
     for filename in os.listdir(input_folder_path):
         # Construct the full file path
         input_file_path = os.path.join(input_folder_path, filename)
-        # string = f"{filename}"
-        # substring = ".jpg"
-        #
-        # filename = string.rstrip(substring)
 
         output_file_path = os.path.join(output_folder_path, filename)
 
         input_image_path = f"{input_file_path}"
 
         # Specify the path and filename for the output PNG image
-        # output_image_path = f"{output_file_path}"
         output_image_path = os.path.splitext(output_file_path)[0] + ".png"
 
         # Open the input image
@@ -55,3 +45,6 @@ if len(sys.argv) > 1:
 
 else:
     print("No command-line arguments provided.")
+
+
+
