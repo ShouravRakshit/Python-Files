@@ -27,10 +27,17 @@ def create_custom_news(links, votes):
     return sort_stories(news)
 
 
-response = requests.get('https://news.ycombinator.com/')
-soup = BeautifulSoup(response.text, 'html.parser')
-votes = soup.select(".score")
-links = soup.select(".titleline")
+def get_response():
+    response = requests.get('https://news.ycombinator.com/')
+    response2 = requests.get('https://news.ycombinator.com/news?p=2')
+    soup = BeautifulSoup(response.text, 'html.parser')
+    soup2 = BeautifulSoup(response2.text, 'html.parser')
+    votes = soup.select(".score") + soup2.select(".score")
+    links = soup.select(".titleline") + soup2.select(".titleline")
 
-result = create_custom_news(links, votes)
-pprint(result)
+    result = create_custom_news(links, votes)
+    pprint(result)
+
+
+get_response()
+
